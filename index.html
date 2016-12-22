@@ -21,6 +21,7 @@
     </p>
     <h2>診断結果</h2>
     <p id="result">こちらに結果が表示されます。</p>
+		<div id="tweet"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
     $(function() {
@@ -50,6 +51,10 @@
             //結果の表示
             var result = name + "さんは「" + character + type + "」タイプです!";
             $("#result").text(result);
+
+						//ツイートリンクの表示
+						var tweetLink = "<a href='https://twitter.com/intent/tweet?text=" + encodeURIComponent(result) + "&hashtags=dotinstall' target='_blank'>ツイートする</a>";
+						$("#tweet").html(tweetLink);
         });
     });
     </script>
